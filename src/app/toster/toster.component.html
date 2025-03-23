@@ -1,0 +1,5 @@
+<div *ngIf="toster.showMessegeBool" class="toster" (mouseenter)="toster.resetTimmer()" (mouseleave)="toster.startTimmer()">
+    {{toster.messege}}
+    <div class="close" (click)="toster.close()">X</div>
+    <div class="timmer" [ngStyle]="{'width': toster.width , 'transition': toster.effect}"></div>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="show" class="blurBack">
+    <div class="backGround">
+        <h2>
+            {{heading}}
+        </h2>
+        <div>
+            <p> {{content}} </p> 
+        </div>
+        <div class="buttonContainer">
+            <button (click)="Cancle()">Cancle</button>
+            <button (click)="Okay()" >Okay</button>
+        </div>
+    </div>
+</div>

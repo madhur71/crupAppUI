@@ -1,0 +1,40 @@
+<h1>Employee List</h1>
+
+<table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th [width]="'40%'">Action</th>
+    </tr>
+    <tr *ngFor="let employee of dataSource">
+        <td> <input *ngIf="employee.id == editId" [(ngModel)]="fistNameNew"> <div  *ngIf="employee.id != editId " > <div>{{employee.fistName}} </div> </div>  </td>
+        <td> <input *ngIf="employee.id == editId" [(ngModel)]="lastNameNew"> <div  *ngIf="employee.id != editId " > {{employee.lastName}} </div>  </td>
+        <td> <input *ngIf="employee.id == editId" [(ngModel)]="emailNew"> <div  *ngIf="employee.id != editId " > {{employee.email}} </div>  </td>
+        <td>
+            <button *ngIf="employee.id != editId" (click)="onEdit(employee)" >Edit</button>
+            <button *ngIf="employee.id == editId" (click)="updateEmployee()" >Update</button>
+            <button *ngIf="employee.id == editId" (click)="cancle()">Cancle</button>
+            <button *ngIf="employee.id != editId" (click)="confirmDelete(employee)">Delete</button>
+            <button [routerLink]="'/details/'+ employee.id">Details</button>
+        </td>
+    </tr>
+    <tr>
+        <td *ngIf="addEmployeeBool">
+            <input (input)="changeEmail()" [(ngModel)]="payload.fistName">
+        </td>
+        <td *ngIf="addEmployeeBool">
+            <input [(ngModel)]="payload.lastName">
+        </td>
+        <td *ngIf="addEmployeeBool">
+            <input [(ngModel)]="payload.email">
+        </td>
+        <td *ngIf="!addEmployeeBool" colspan="3">
+
+        </td>
+        <td>
+            <button *ngIf="addEmployeeBool" (click)="addEmployee()"> Add Employee </button>
+            <button (click)="showForm()"> {{!addEmployeeBool?"Add New":"Cancel"}} </button>
+        </td>
+    </tr>
+  </table>

@@ -1,0 +1,15 @@
+<h1>Employee Details</h1>
+<div class="d-flex">
+    <div>
+        <div>Employee Id</div>
+        <div>First Name</div>
+        <div>Last Name</div>
+        <div>Email ID</div>
+    </div>
+    <div *ngIf="data">
+        <div>{{data.id}}</div>
+        <div>{{data.fistName}}</div>
+        <div>{{data.lastName}}</div>
+        <div>{{data.email}}</div>
+    </div>
+</div>

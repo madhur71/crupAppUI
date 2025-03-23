@@ -1,0 +1,11 @@
+.backGround{
+    background: white;
+    padding: 10px;
+    width: 30%;
+    position: absolute;
+    right: 35%;
+    top: 5vh;
+}
+h2{
+    margin-top: 0px;
+}
